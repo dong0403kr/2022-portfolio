@@ -110,3 +110,29 @@ ImageView titleview = (ImageView) findViewById(R.id.titleimage);
         super.onBackPressed();
     }
 ```
+
+<br><br>
+## - 실시간으로 변수의 변화를 감지하기 위해 MutableLiveData 사용
+블루투스 연결 상태를 변수로 저장하고 변화를 감지하기 위해 MutableLiveData 이용<br>
+**State.java**
+```java
+public class State {
+    public static MutableLiveData<Integer> BTState = new MutableLiveData<>();
+    public static MutableLiveData<Integer> SATState = new MutableLiveData<>();
+}
+````
+변수의 변화가 감지되면 변수의 값에 따라 이미지뷰를 변경<br>
+**ActivityTimer.java**
+```java
+BTState.observe(this, new Observer<Integer>() { // 블루투스 연결 상태 변수 변화 감지
+            @Override
+            public void onChanged(Integer bt) {
+                if(bt==1) {
+                    stateimageView.setImageResource(R.drawable.state_connected);
+                }
+                else if(bt==0) {
+                    stateimageView.setImageResource(R.drawable.state_discon);
+                }
+            }
+        });
+```
