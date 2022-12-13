@@ -8,4 +8,8 @@
 
 ![캡처_2022_12_13_07_23_06_745](https://user-images.githubusercontent.com/82890824/207167970-c6685ab1-798e-4ce1-8802-48c1f162d61b.jpg)
 <br><br><br>
-### 2. 
+### 2. 안드로이드 코딩
+1. Manifest.xml 권한 등록
+
+<br><br>
+
